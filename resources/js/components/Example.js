@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { DatePicker } from 'antd';
 
+const divStyle = {
+    margin: '40px',
+    border: '5px solid pink'
+};
 export default class Example extends Component {
-    constructor(props){
-        super(props);
-        var expected = {
-            pas: '5',
-        };
-        console.log("expected:", expected);
-        console.log("props:", props);
-        console.log("this.props.pas", this.props.pas);
-        this.state = {
-            'pas': props.pas
-        };
-    };
     render() {
         return (
             <div className="container">
@@ -23,6 +16,8 @@ export default class Example extends Component {
                             <div className="card-header">Example Component</div>
 
                             <div className="card-body">I'm an example component!</div>
+                            <DatePicker style={divStyle} />
+                            <span id="datepicker"></span>
                         </div>
                     </div>
                 </div>
@@ -33,4 +28,5 @@ export default class Example extends Component {
 
 if (document.getElementById('example')) {
     ReactDOM.render(<Example />, document.getElementById('example'));
+    ReactDOM.render(<DatePicker />,  document.getElementById('datepicker'));
 }

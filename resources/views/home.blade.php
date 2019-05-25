@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<Example id="example" pas={1}>
+<div id="example"></div>
 @endsection
+
+@push('scripts')
+<script>
+    let myData = "asdasd";
+</script>   
+@endpush

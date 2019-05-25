@@ -12,5 +12,5 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
- import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 require('./components/Example');
