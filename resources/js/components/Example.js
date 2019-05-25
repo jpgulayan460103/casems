@@ -2,6 +2,18 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 export default class Example extends Component {
+    constructor(props){
+        super(props);
+        var expected = {
+            pas: '5',
+        };
+        console.log("expected:", expected);
+        console.log("props:", props);
+        console.log("this.props.pas", this.props.pas);
+        this.state = {
+            'pas': props.pas
+        };
+    };
     render() {
         return (
             <div className="container">
