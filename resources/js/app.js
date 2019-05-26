@@ -14,3 +14,4 @@ require('./bootstrap');
 
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 require('./components/Example');
+require('./components/AddCase');
