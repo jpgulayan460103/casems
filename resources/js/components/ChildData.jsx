@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import _forEach from 'lodash/forEach';
+import _cloneDeep from 'lodash/cloneDeep';
 
 export default class ChildData extends Component {
     constructor(props){
@@ -9,9 +10,13 @@ export default class ChildData extends Component {
         this.handleInput = this.handleInput.bind(this)
         this.resetForm = this.resetForm.bind(this);
         this.state = {
-            formData: this.props.product
+            formData: this.productForm()
         };
     };
+
+    productForm(){
+        return _cloneDeep(this.props.product);
+    }
 
     componentWillReceiveProps(nextProps) {
         this.setState({ formData: nextProps.product });
@@ -48,15 +53,7 @@ export default class ChildData extends Component {
     }
 
     resetForm(){
-        let resetFormData = [];
-        _forEach(this.state.formData, function(value, key) {
-            if (key == 'options'){
-                resetFormData[key] = [];
-            }else{
-                resetFormData[key] = "";
-            }
-        });
-        this.setState({ formData: resetFormData });
+        this.setState({ formData: this.productForm() });
     }
 
     
