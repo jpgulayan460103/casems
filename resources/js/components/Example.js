@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { DatePicker } from 'antd';
 
-// const divStyle = {
-//     margin: '40px',
-//     border: '5px solid pink'
-// };
 export default class Example extends Component {
     render() {
         return (
@@ -15,7 +10,9 @@ export default class Example extends Component {
                         <div className="card">
                             <div className="card-header">Example Component</div>
 
-                            <div className="card-body">I'm an example component!</div>
+                            <div className="card-body">
+                                I'm an example component!
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import BeneficiaryTable from './BeneficiaryTable';
 
-export default class Example extends Component {
+export default class AddCase extends Component {
     render() {
         return (
             <div>
@@ -12,6 +12,6 @@ export default class Example extends Component {
     }
 }
 
-if (document.getElementById('example')) {
-    ReactDOM.render(<Example />, document.getElementById('example'));
+if (document.getElementById('add-case')) {
+    ReactDOM.render(<AddCase />, document.getElementById('add-case'));
 }

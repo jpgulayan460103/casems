@@ -4,10 +4,10 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12 col-md-6">
-            <div id="add-case-form"></div>
-        </div>
-        <div class="col-sm-12 col-md-6">
-            <div id="example"></div>
+            {{-- <div id="example"></div> --}}
+            {{-- <div id="add-case"></div> --}}
+            <div id="pass-data"></div>
+            {{-- <div id="sample-form"></div> --}}
         </div>
     </div>
 </div>
