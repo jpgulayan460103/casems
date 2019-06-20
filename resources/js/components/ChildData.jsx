@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import _forEach from 'lodash/forEach';
 import _cloneDeep from 'lodash/cloneDeep';
+import Button from '@material-ui/core/Button';
+import clsx from 'clsx';
+import { makeStyles } from '@material-ui/core/styles';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
 
 export default class ChildData extends Component {
     constructor(props){
@@ -10,7 +15,9 @@ export default class ChildData extends Component {
         this.handleInput = this.handleInput.bind(this)
         this.resetForm = this.resetForm.bind(this);
         this.state = {
-            formData: this.productForm()
+            formData: this.productForm(),
+            formErrors: {},
+            isTrue: true
         };
     };
 
@@ -20,6 +27,7 @@ export default class ChildData extends Component {
 
     componentWillReceiveProps(nextProps) {
         this.setState({ formData: nextProps.product });
+        this.setState({ formErrors: nextProps.formErrors });
     }
     handleInput(event) {
         let target = event.target;
@@ -64,6 +72,19 @@ export default class ChildData extends Component {
     render() {
         return (
             <div>
+
+            <form noValidate autoComplete="off">
+              <TextField
+                label="Name"
+                margin="normal"
+                error={this.state.formErrors.test ? true : false}
+                helperText={this.state.formErrors.test ? 'Some important text' : ''}
+                required
+              />
+            </form>
+
+
+
                 <form>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Email address</label>

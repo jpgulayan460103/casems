@@ -14,7 +14,10 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        return Product::all();
+        // return Product::all();
+        $data  = ['test' => 'akjsdhjasdbhajsd'];
+        sleep(3);
+        return response($data, 200);
     }
 
     /**

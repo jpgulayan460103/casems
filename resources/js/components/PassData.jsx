@@ -14,6 +14,7 @@ export default class PassData extends Component {
             products: [],
             product: this.productForm(),
             selectedProductIndex: null,
+            getResponse: {}
         };
         this.onAdd = this.onAdd.bind(this);
         this.onEdit = this.onEdit.bind(this);
@@ -34,14 +35,15 @@ export default class PassData extends Component {
     getRequest(){
         ApiMain.Product.getList()
             .then((res) => {
-                // console.log(res.data);
+                this.setState({getResponse: res.data});
             })
             .catch(() => { })
             .then(() => { });
     }
 
     onAdd(formData){
-        // this.getRequest();
+        this.setState({getResponse : {}});
+        this.getRequest();
         let products = this.state.products;
         if (this.state.selectedProductIndex == null){
             products.push(formData);
@@ -60,7 +62,7 @@ export default class PassData extends Component {
     render() {
         return (
             <div>
-                <ChildData addData={this.onAdd} product={this.state.product} />
+                <ChildData addData={this.onAdd} product={this.state.product} formErrors={this.state.getResponse}/>
                 <span>{ this.state.showDiv ? this.state.passedMessage : ""}</span>
                 <ProductsTable products={this.state.products} editData={this.onEdit} />
             </div>
