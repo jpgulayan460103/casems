@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.1.1",
-    "angular": "^1.7.8",
+    "angular": "^1.8.0",
     "antd": "^3.18.2"
   }
 }
